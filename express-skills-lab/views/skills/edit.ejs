@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify a Skill</title>
+</head>
+<body>
+    <h1>Edit the Skill of <%= skill.text %></h1>
+    <h2>Box should be checked if skill is acquired</h2>
+    <form action="/skills/<%= skillId %>?_method=PUT" method="POST">
+        <input type="text" value="<%= skill.text %>" name="text">
+        <input type="checkbox" name="acquired" <%- skill.acquired ? 'checked' : '' %>>
+        <input type="submit" value="Update Skill">
+    </form>
+</body>
+</html>

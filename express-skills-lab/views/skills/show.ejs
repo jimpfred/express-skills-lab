@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Skills List</title>
+</head>
+<body>
+    <h1>Skill Details</h1>
+    <h2>Name: <%= skill.text %></h1>
+    <h2>This skill is currently <%= skill.acquired ? '"acquired"' : 'not yet "acquired"'%></p>
+    <a href="/skills/<%= skillId %>/edit">Click here to modify</a>
+</body>
+</html>

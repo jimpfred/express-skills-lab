@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Skills</title>
+</head>
+<body>
+    <h1>Here are Your Skills as of <%= Date() %></h1>
+    <h2>Select Skill to See Details</h2>
+    <a href="/">Home</a>
+    <ul>
+        <% skills.forEach(function(skill, idx) { %>
+            <li>
+                <form action="/skills/<%= idx %>?_method=DELETE" method="POST">
+                    <button type="submit">🗑</button>
+                </form>
+                <a href="/skills/<%= idx %>">
+                    <%= skill.text %>
+                    -
+                    <%= skill.acquired ? 'acquired' : 'not yet acquired' %>
+                </a>
+            </li>
+       <% }) %>
+    </ul>
+    <a href="/skills/new">Add Skill</a>
+</body>
+</html>
